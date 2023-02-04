@@ -1,7 +1,6 @@
 import './CostItem.css';
 
 
-
 function CostItem(){
     const costDate = new Date(2021,2,12);
     const costDescription = 'Холодильник';
