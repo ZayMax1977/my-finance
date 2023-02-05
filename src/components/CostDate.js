@@ -5,6 +5,7 @@ function CostDate(props){
     const year = props.date.getFullYear();
     const day = props.date.toLocaleString('ru-RU',{day:'2-digit'})
     return(
+        
         <div className="cost-date">
             <div className="cost-date__month">{month}</div>
             <div className="cost-date__year">{year}</div>
