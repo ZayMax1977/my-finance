@@ -26,6 +26,8 @@ function App() {
       
         <Costs costs = {costs}/>
       
+        
+      
     </div>
    
     
