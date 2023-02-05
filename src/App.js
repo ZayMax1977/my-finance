@@ -5,17 +5,17 @@ function App() {
   const costs =[
     {
       date:new Date(2021,2,12),
-      describtion: 'Холодильник',
+      description: 'Холодильник',
       amount: 999.99
     },
     {
       date:new Date(2021,5,4),
-      describtion: 'ПК',
+      description: 'ПК',
       amount: 1254.57
     },
     {
       date:new Date(2021,9,30),
-      describtion: 'Джинсы',
+      description: 'Джинсы',
       amount: 123.23
     }
 
