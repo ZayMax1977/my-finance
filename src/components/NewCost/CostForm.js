@@ -28,22 +28,26 @@ const CostForm = () =>{
             amount:InputAmount,
             date:new Date(InputDate)
         };
-        console.log(costData)
+        console.log(costData) // что то делаем с данными
+        setInputName(''); // отчищаем  поля в форме
+        setInputAmount('');
+        setInputDate('');
+
     };
     return (                               
         <form onSubmit={SubmitHandler}>
             <div className='new-cost__controls'>
                 <div className='new-cost__control label'>
                     <label>Название</label>
-                    <input type='text' onChange={NameChangeHandler}/>
+                    <input type='text' value={InputName} onChange={NameChangeHandler}/>
                 </div>
                 <div className='new-cost__control label'>
                     <label>Сумма</label>
-                    <input type='number' min='0.01' step='0.01' onChange={AmountChangeHandler}/>
+                    <input type='number' min='0.01' step='0.01' value={InputAmount} onChange={AmountChangeHandler}/>
                 </div>
                 <div className='new-cost__control label'>
                     <label>Дата</label>
-                    <input type='date' min='2023-02-06' step='2025-02-06' onChange={DateChangeHandler}/>
+                    <input type='date' min='2023-02-06' step='2025-02-06' value={InputDate}onChange={DateChangeHandler}/>
                 </div>
                 <div className='new-cost__actions'>
                     <button type='submit'>Добавить Расход</button>
