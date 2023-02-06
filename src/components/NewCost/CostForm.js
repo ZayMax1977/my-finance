@@ -2,29 +2,36 @@ import  React, {useState} from "react";
 import './CostForm.css'
 
 const CostForm = () =>{
-    const [name,setName] = useState("");
-    const [amount,setAmount] = useState("");
-    const [date,setDate] = useState("");
+    const [InputName,setInputName] = useState("");
+    const [InputAmount,setInputAmount] = useState("");
+    const [InputDate,setInputDate] = useState("");
 
 
     const NameChangeHandler =(e) =>{
-        setName(e.target.value)
-        console.log(name)
+        setInputName(e.target.value)
 
     };
     const AmountChangeHandler =(e) =>{
-        setAmount(e.target.value)
-        console.log(amount)
+        setInputAmount(e.target.value)
       
 
     };
     const DateChangeHandler =(e) =>{
-        setDate(e.target.value)
-        console.log(date)
+        setInputDate(e.target.value)
 
     };
+
+    const SubmitHandler = (e) =>{
+        e.preventDefault(); // убираем дефолтное поведение, в данном случае что бы данные ф форме не пропадали при перезагрузке формы при нажатии на кнопку
+        const costData = {
+            name:InputName, // данные берем из состояний
+            amount:InputAmount,
+            date:new Date(InputDate)
+        };
+        console.log(costData)
+    };
     return (                               
-        <form>
+        <form onSubmit={SubmitHandler}>
             <div className='new-cost__controls'>
                 <div className='new-cost__control label'>
                     <label>Название</label>
