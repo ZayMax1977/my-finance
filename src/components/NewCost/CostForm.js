@@ -15,9 +15,15 @@ const CostForm = () =>{
     const NameChangeHandler =(e) =>{
         // setName(e.target.value);
         // console.log(name);
-        setUserInput({
-            ...userInput,
-            name: e.target.value
+        // setUserInput({
+        //     ...userInput,
+        //     name: e.target.value
+        // })
+        setUserInput((previousState) => {
+            return{
+                ...previousState,
+                name: e.target.value,
+            }
         })
         console.log(userInput.name)
 
@@ -25,9 +31,15 @@ const CostForm = () =>{
     const AmountChangeHandler =(e) =>{
         // setAmount(e.target.value);
         // console.log(amount);
-        setUserInput({
-            ...userInput,
-            amount: e.target.value
+        // setUserInput({
+        //     ...userInput,
+        //     amount: e.target.value
+        // })
+        setUserInput((previousState) => {
+            return{
+                ...previousState,
+                amount: e.target.value,
+            }
         })
         console.log(userInput.amount)
 
@@ -35,9 +47,15 @@ const CostForm = () =>{
     const DateChangeHandler =(e) =>{
         // setDate(e.target.value);
         // console.log(date);
-        setUserInput({
-            ...userInput,
-            date: e.target.value
+        // setUserInput({
+        //     ...userInput,
+        //     date: e.target.value
+        // })
+        setUserInput((previousState) => {
+            return{
+                ...previousState,
+                date: e.target.value,
+            }
         })
         console.log(userInput.date)
 
