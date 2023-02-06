@@ -2,22 +2,45 @@ import  React, {useState} from "react";
 import './CostForm.css'
 
 const CostForm = () =>{
-    const [name,setName] = useState("");
-    const [amount,setAmount] = useState("");
-    const [date,setDate] = useState("");
+    // const [name,setName] = useState("");
+    // const [amount,setAmount] = useState("");
+    // const [date,setDate] = useState("");
 
+    const [userInput, setUserInput] = useState({
+        name: "",
+        amount: "",
+        date:""
+    });
 
     const NameChangeHandler =(e) =>{
-        setName(e.target.value);
-        console.log(name);
+        // setName(e.target.value);
+        // console.log(name);
+        setUserInput({
+            ...userInput,
+            name: e.target.value
+        })
+        console.log(userInput.name)
+
     };
     const AmountChangeHandler =(e) =>{
-        setAmount(e.target.value);
-        console.log(amount);
+        // setAmount(e.target.value);
+        // console.log(amount);
+        setUserInput({
+            ...userInput,
+            amount: e.target.value
+        })
+        console.log(userInput.amount)
+
     };
     const DateChangeHandler =(e) =>{
-        setDate(e.target.value);
-        console.log(date);
+        // setDate(e.target.value);
+        // console.log(date);
+        setUserInput({
+            ...userInput,
+            date: e.target.value
+        })
+        console.log(userInput.date)
+
     };
     return (                               
         <form>
