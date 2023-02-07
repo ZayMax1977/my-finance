@@ -1,24 +1,19 @@
 import  React, {useState} from "react";
 import './CostForm.css'
 
-const CostForm = () =>{
+const CostForm = (props) =>{
     const [InputName,setInputName] = useState("");
     const [InputAmount,setInputAmount] = useState("");
     const [InputDate,setInputDate] = useState("");
 
-
     const NameChangeHandler =(e) =>{
         setInputName(e.target.value)
-
     };
     const AmountChangeHandler =(e) =>{
         setInputAmount(e.target.value)
-      
-
     };
     const DateChangeHandler =(e) =>{
         setInputDate(e.target.value)
-
     };
 
     const SubmitHandler = (e) =>{
@@ -27,8 +22,8 @@ const CostForm = () =>{
             name:InputName, // данные берем из состояний
             amount:InputAmount,
             date:new Date(InputDate)
-        };
-        console.log(costData) // что то делаем с данными
+        };  
+        props.onSaveCostData(costData);
         setInputName(''); // отчищаем  поля в форме
         setInputAmount('');
         setInputDate('');
