@@ -12,7 +12,10 @@ function Costs(props){
 
     }
 
-    
+    const filteredCosts = props.costs.filter((cost)=>
+    {
+      return cost.date.getFullYear().toString() === selectedYear;
+    });
     
     return(
         <Card className='costs'>
@@ -20,7 +23,7 @@ function Costs(props){
         
         
         {
-        props.costs.filter(i => (i.date.getFullYear().toString() === selectedYear)).map((cost) => (
+        filteredCosts.map((cost) => (
           <CostItem 
           key = {cost.id}
           date ={cost.date}
