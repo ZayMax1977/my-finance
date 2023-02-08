@@ -19,7 +19,7 @@ const CostForm = (props) =>{
     const SubmitHandler = (e) =>{
         e.preventDefault(); // убираем дефолтное поведение, в данном случае что бы данные ф форме не пропадали при перезагрузке формы при нажатии на кнопку
         const costData = {
-            name:InputName, // данные берем из состояний
+            description:InputName, // данные берем из состояний
             amount:InputAmount,
             date:new Date(InputDate)
         };  
@@ -42,7 +42,7 @@ const CostForm = (props) =>{
                 </div>
                 <div className='new-cost__control label'>
                     <label>Дата</label>
-                    <input type='date' min='2023-02-06' step='2025-02-06' value={InputDate}onChange={DateChangeHandler}/>
+                    <input type='date' min='2023-02-06' step='2025-02-06' value={InputDate} onChange={DateChangeHandler}/>
                 </div>
                 <div className='new-cost__actions'>
                     <button type='submit'>Добавить Расход</button>
