@@ -20,10 +20,11 @@ function Costs(props){
     return(
         <Card className='costs'>
         <CostsFilter year={selectedYear} onChangeYear ={yearChangeHandler}/>
-        
-        
-        {
-        filteredCosts.map((cost) => (
+      
+        {filteredCosts.length === 0 && 
+          <p>В этм году расходов не было</p>}
+
+        {filteredCosts.length !== 0 && filteredCosts.map((cost) => (
           <CostItem 
           key = {cost.id}
           date ={cost.date}
