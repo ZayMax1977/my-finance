@@ -42,7 +42,7 @@ const CostForm = (props) =>{
                 </div>
                 <div className='new-cost__control label'>
                     <label>Дата</label>
-                    <input type='date' min='2023-02-06' step='2025-02-06' value={InputDate} onChange={DateChangeHandler}/>
+                    <input type='date' min='2019-02-06' step='2025-02-06' value={InputDate} onChange={DateChangeHandler}/>
                 </div>
                 <div className='new-cost__actions'>
                     <button type='submit'>Добавить Расход</button>

@@ -6,21 +6,30 @@ import React,{useState} from "react"
 
 function Costs(props){
     const [selectedYear,setSelectedYear] = useState('2021');
-
+    
     const yearChangeHandler = (year)=>{
-      setSelectedYear(year)
+      setSelectedYear(year);
+
     }
+
+    
     
     return(
         <Card className='costs'>
         <CostsFilter year={selectedYear} onChangeYear ={yearChangeHandler}/>
-        {props.costs.map((cost) => (
+        
+        
+        {
+        props.costs.filter(i => (i.date.getFullYear().toString() === selectedYear)).map((cost) => (
           <CostItem 
           key = {cost.id}
           date ={cost.date}
           description={cost.description}
           amount = {cost.amount}/>
-        ))}
+        ))
+        
+      }
+      
       </Card>
     );
 }
