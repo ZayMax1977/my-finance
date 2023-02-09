@@ -1,7 +1,7 @@
 import Costs from './components/Costs/Costs'
 import NewCost from './components/NewCost/NewCost';
 import React,{useState} from 'react';
-
+import AddCostButton from './components/NewCost/AddCostButton';
 
 const INITIAL_COSTS =[
   {
@@ -27,16 +27,44 @@ const INITIAL_COSTS =[
 
 function App() {
   const [costs,setCosts] =  useState(INITIAL_COSTS)
-  
+  const [NewAnchor,setAnchor] = useState(true)
+
+  const hiddenForm = (oldAnchor) =>{
+    setAnchor(oldAnchor)
+  }
   const addCostHandler = (cost) =>{
     setCosts((prevCosts)=>{
     return [cost,...prevCosts];
   });
   } ;
+
+  
+
+  const withForm = 
+
+      <div>
+        <NewCost onAddCost={addCostHandler} hiddenForm = {hiddenForm}/>  
+        <Costs costs = {costs}/>      
+  </div>
+
+
+  const withoutForm = 
+
+      <div>
+        <AddCostButton hiddenForm = {hiddenForm} />  
+        <Costs costs = {costs}/>      
+  </div>
+ 
+
+  let newView = NewAnchor ? withoutForm : withForm;
+  
+  
   return (
     <div>
-        <NewCost onAddCost={addCostHandler}/>      
-        <Costs costs = {costs}/>      
+        {newView}
+        {/* <NewCost onAddCost={addCostHandler}/>  
+        <AddCostButton hiddenForm = {hiddenForm}/>  
+        <Costs costs = {costs}/>       */}
     </div>
   );
 }

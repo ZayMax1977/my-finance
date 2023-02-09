@@ -3,9 +3,7 @@ import CostItem from './CostItem';
 
 
 const CostList =(props) =>{
-  // console.log(props.selectedYear)
-  // console.log(props.costs)
-    let costsContent = <p className='cost-list__fallback'>В этом году расходов не было</p>;
+    let costsContent = <h2 className='cost-list__fallback'>В этом году расходов не было</h2>;
 
     if (props.selectedYear === 'Все года'){
       costsContent = props.costs.map((cost) => (

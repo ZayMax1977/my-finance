@@ -29,6 +29,11 @@ const CostForm = (props) =>{
         setInputDate('');
 
     };
+
+    const  hiddenForm = () => {
+        const anchorHiddenForm = true;
+        props.hiddenForm(anchorHiddenForm)
+    }
     return (                               
         <form onSubmit={SubmitHandler}>
             <div className='new-cost__controls'>
@@ -46,6 +51,7 @@ const CostForm = (props) =>{
                 </div>
                 <div className='new-cost__actions'>
                     <button type='submit'>Добавить Расход</button>
+                    <button type='button' onClick={hiddenForm}>Отмена</button>
                 </div>
             </div>
         </form>
